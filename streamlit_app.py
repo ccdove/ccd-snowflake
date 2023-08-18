@@ -1,7 +1,7 @@
 import streamlit
 import pandas
 import requests
-import snowflake.connector
+
 
 
 streamlit.title('Healthy dinners count')
@@ -37,4 +37,4 @@ fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # creates a dataframe of flattened data?
 streamlit.dataframe(fruityvice_normalized)
 
-
+import snowflake.connector
