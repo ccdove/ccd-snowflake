@@ -20,7 +20,7 @@ my_fruit_list = my_fruit_list.set_index('Fruit')
 
 fruits_selected = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index), [ 'Avocado', 'Lime' ])
 fruits_to_show = my_fruit_list.loc[fruits_selected]
-
+streamlit.dataframe(fruits_to_show)
 
 
 # display data from file
@@ -33,13 +33,12 @@ def get_fruity_advice_data(this_fruit_choice):
     fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
     return fruityvice_normalized
 
-streamlit.dataframe(fruits_to_show)
+streamlit.header("Fruityvice Fruit Advice!")
 try:
   fruit_choice = streamlit.text_input('What fruit would you like information about?')
   if not fruit_choice:
      streamlit.error('Please select a fruit to get information')
   else:
-    streamlit.header("Fruityvice Fruit Advice!")   
     back_from_function = get_fruity_advice_data(fruit_choice)
              # creates a dataframe of flattened data?
     streamlit.dataframe(back_from_function)
