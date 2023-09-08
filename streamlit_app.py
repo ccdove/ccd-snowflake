@@ -26,7 +26,7 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 # display data from file
 #       streamlit.dataframe(my_fruit_list)
 streamlit.dataframe(fruits_to_show)
-def get_fruity_advice_data(this_fruit_choice)
+def get_fruity_advice_data(this_fruit_choice):
    fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + this_fruit_choice)
          #     streamlit.text(fruityvice_response.json())
          # flaytyens json? 
