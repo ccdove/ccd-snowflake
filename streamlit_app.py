@@ -58,9 +58,9 @@ if streamlit.button('Get fruit load list'):
 #  my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
 
 def insert_a_fruit(add_fruit):
-with my_cnx.cursor() as my_cur:
-     my_cur.execute("insert * fruit_load_list value('" + add_fruit + "')")
-     return "thanks for adding " + add_fruit
+  with my_cnx.cursor() as my_cur:
+       my_cur.execute("insert * fruit_load_list value('" + add_fruit + "')")
+       return "thanks for adding " + add_fruit
 
 streamlit.header("The fruit list is:")
 your_fruit_choice = streamlit.text_input('Would you care to add a fruit')
